@@ -1,0 +1,50 @@
+Demo application for creating bank cards.
+
+Features and request samples:
+
+1) Create client
+
+```
+curl -X POST \
+  http://localhost:8080/clients \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "firstName": "John",
+    "lastName": "Smith",
+    "oib": "26345676540",
+    "status": "COMPLETED"
+}'
+```
+
+2) Fetch client by oib
+
+```
+curl -X GET \
+  http://localhost:8080/clients/16345676540 \
+```
+
+3) Delete client by oib
+
+```
+curl -X DELETE \
+  http://localhost:8080/clients/26345676540 \
+```
+
+4) Create card for client
+   
+```
+curl -X POST \
+  http://localhost:8080/clients/cards \
+  -H 'Content-Type: application/json' \
+  -d '{
+	"firstName":"John",
+	"lastName":"Smith",
+	"oib":"26345676540",
+	"status":"PENDING"
+}'
+```
+
+
+
+
+
