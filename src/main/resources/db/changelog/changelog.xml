@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="0" author="admin">
+        <createTable tableName="Status">
+            <column name="id" type="smallint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="description" type="VARCHAR(100)"/>
+        </createTable>
+
+        <insert tableName="Status">
+            <column name="id" value="1" />
+            <column name="description" value="PENDING" />
+        </insert>
+        <insert tableName="Status">
+            <column name="id" value="2" />
+            <column name="description" value="APPROVED" />
+        </insert>
+        <insert tableName="Status">
+            <column name="id" value="3" />
+            <column name="description" value="REJECTED" />
+        </insert>
+        <insert tableName="Status">
+            <column name="id" value="4" />
+            <column name="description" value="COMPLETED" />
+        </insert>
+
+        <createTable tableName="Clients">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="firstname" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="lastname" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="oib" type="VARCHAR(11)">
+                <constraints nullable="false" unique="true" uniqueConstraintName="oib_ux"/>
+            </column>
+            <column name="statusid" type="smallint">
+                <constraints nullable="false" foreignKeyName="fk_statusId_status" references="Status(id)"/>
+            </column>
+        </createTable>
+
+    </changeSet>
+</databaseChangeLog>
