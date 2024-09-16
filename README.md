@@ -1,5 +1,7 @@
 Demo Java & Spring Boot web application for creating bank cards.
 
+Postman collection for local testing available at src/main/resources/postman.
+
 Features and request samples:
 
 1) Create client
@@ -12,7 +14,7 @@ curl -X POST \
     "firstName": "John",
     "lastName": "Smith",
     "oib": "26345676540",
-    "status": "COMPLETED"
+    "status": "PENDING"
 }'
 ```
 
