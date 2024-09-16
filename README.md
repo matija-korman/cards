@@ -1,4 +1,4 @@
-Demo application for creating bank cards.
+Demo Java & Spring Boot web application for creating bank cards.
 
 Features and request samples:
 
