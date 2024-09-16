@@ -11,7 +11,7 @@
 	<groupId>com.example</groupId>
 	<artifactId>cards</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>rbacards</name>
+	<name>cards</name>
 	<description>Demo project for RBA</description>
 	<url/>
 	<licenses>
